@@ -3,8 +3,19 @@ Mock Payment Microservice using Flask
 SPDX - License - Identifier: LGPL - 3.0 - or -later
 Auteurs : Gabriel C. Ullmann, Fabio Petrillo, 2025
 """
+import logging
+import sys
 from flask import Flask, request, jsonify
 from controllers.payment_controller import add_payment, process_payment, get_payment
+
+# Configuration du logging pour afficher dans les logs Docker
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stdout)
+    ]
+)
 
 app = Flask(__name__)
 

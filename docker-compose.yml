@@ -1,7 +1,9 @@
 services:
   payments_api:
     build: .
-    container_name: payments_api 
+    container_name: payments_api
+    env_file:
+      - .env
     environment:
       - PYTHONUNBUFFERED=1
     volumes:
