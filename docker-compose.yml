@@ -9,7 +9,7 @@ services:
     ports:
       - "5009:5009"
     networks:
-      - labo05-network
+      - labo08-network
     depends_on:
       - mysql_payments
 
@@ -24,13 +24,13 @@ services:
     # ports:
     #   - "3306:3306"
     networks:
-      - labo05-network
+      - labo08-network
     volumes:
       - mysql_data:/var/lib/mysql
       - ./db-init:/docker-entrypoint-initdb.d
 
 networks:
-  labo05-network:
+  labo08-network:
     external: true 
 
 volumes:
